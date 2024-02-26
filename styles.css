@@ -1,0 +1,97 @@
+body {
+    background-image: url("https://cdn.midjourney.com/c5011101-d38a-4785-bb40-f113219ef1e5/0_1.webp");
+    background-repeat: repeat;
+    background-size: contain;
+    list-style-position: inside;
+}
+
+footer {
+    text-align: center;
+    font-size: x-small;
+    color:rgb(112, 43, 91);
+
+}
+
+nav {
+    margin: 0 auto;
+    padding: 0 auto;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    list-style: none;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: none;
+}
+
+.invisible {
+    color:transparent;
+    margin: 0 auto;
+    font-size: x-small;
+}
+
+.nav {
+    font-size: small;
+    text-align: center;
+    border: 1px dashed rgb(112, 43, 91);
+    border-radius: 10px;
+    padding-inline: 2px;
+    margin: 0 auto;
+    padding: 0 auto;
+    color:rgb(112, 43, 91);
+    text-decoration: none;
+}
+
+.navlarge {
+    font-size: x-large;
+    text-align: center;
+    border: 1px dashed rgb(112, 43, 91);
+    border-radius: 10px;
+    padding-inline: 2px;
+    margin: 0 auto;
+    padding: 0 auto;
+    color:rgb(112, 43, 91);
+    text-decoration: none;
+}
+
+.container {
+    position: relative;
+    text-align: center;
+}
+
+.homeimage {
+    border-radius: 200px;
+    opacity: .5;
+    text-align: center;
+}
+
+.homeimage:hover {
+    opacity: .9;
+}
+
+.gridtext {
+    font-size: x-large;
+    color:rgb(112, 43, 91);
+    text-shadow: #FFF 1px 0 10px;
+}
+
+.showoffcontainer {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(2, 200px);
+    grid-template-rows: repeat(2, 200px);
+    margin: 0 auto;
+    padding: 0 auto;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    justify-items: center;
+    justify-content: center;
+}
+
+#musicplayer {
+    opacity: .8;
+    text-align: center;
+}
