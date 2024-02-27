@@ -21,6 +21,7 @@ nav {
     text-align: center;
 }
 
+
 a {
     text-decoration: none;
     color: none;
@@ -42,6 +43,10 @@ a {
     padding: 0 auto;
     color:rgb(112, 43, 91);
     text-decoration: none;
+}
+
+.nav:hover {
+    background-color: rgba(255, 131, 218, 0.3);
 }
 
 .navlarge {
