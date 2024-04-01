@@ -19,7 +19,7 @@ export const Search = (setImageData) => {
       };
 
       const apiResponse = await fetch(
-        "https://fsa-jwt-practice.herokuapp.com/signup",
+        "https://kuze.neon-sole.ts.net/images?search=${searchQuery}",
         searchParameter
       );
 
