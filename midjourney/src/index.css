@@ -1,0 +1,171 @@
+body {
+    background-image: url("https://cdn.midjourney.com/7ce6f553-492f-4db9-8633-b4e216f910a3/0_1.webp");
+    background-size: 525px;
+    background-repeat: repeat;
+    margin: 30px;
+    margin-bottom: 50px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 0 auto;
+}
+
+input {
+    width: 220px;
+    margin: 8px;
+    padding: 2px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    /* text-align: center; */
+}
+
+textarea {
+    width: 220px;
+    margin: 8px;
+    padding: 2px;
+    text-align: justify;
+    align-items: center;
+}
+
+select {
+    width: 220px;
+    margin: 8px;
+    padding: 2px;
+    text-align: center;
+    align-items: center;
+}
+
+button {
+    margin: 0 auto;
+}
+
+h2 {
+    font-size: medium;
+    text-align: center;
+}
+
+/* rules for gallery images */
+.gallery {
+    width: 200px;
+    border-radius: 400px;
+    opacity: .7;
+    padding: 5px;
+    margin: 5px;
+}
+
+/* basic buttonShape for the form buttons */
+
+.buttonShape {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    border: 0 solid white;
+    border-radius: 10px;
+    background-color: rgba(245, 245, 220, 0.447);
+}
+
+.submit {
+    width: 90px;
+    padding: 8px;
+}
+
+.addTerms {
+    width: 130px;
+}
+
+.currentSearch {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    text-align: center;
+    font-size: small;
+    width: 350px;
+}
+
+.searchBubbles {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;  
+}
+
+/* search cloud bubble style */
+.bubbles {
+    background-color: rgba(255, 227, 192, 0.326);
+    padding: 3px;
+    margin: 2px;
+    border-radius: 100px;
+}
+
+.termCloud {
+    margin: 2px;
+    padding: 2px;
+}
+
+/* divs outside each mirage */
+.imageBox {
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 220px;
+    padding: 2px;
+    margin: 3px;
+    backdrop-filter: blur(4px);
+    /* background-color: black; */
+    background-size: 300px;
+    background-repeat: repeat;
+    border-radius: 400px;
+}
+
+/* how to handle to div hover change */ 
+.imageBox:hover {
+    width: 550px;
+    position: relative;
+    padding: 5px;
+    margin: 5px;
+}
+
+/* what to do for each image inside the divs */ 
+.imageBox:hover > img {
+    opacity: 1;
+    width: 500px;
+    position: relative;
+}
+
+/* the final flex wrapper for each image div item */ 
+.flexMe {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* the final flex wrapper for the form */ 
+.formBox {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.closeX {
+    border-radius: 100px;
+    border-color: rgba(250, 235, 215, 0.459);
+}
+
+.xButton {
+    height: 20px;
+    width: 10px;
+    position: ;
+}
+
