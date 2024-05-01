@@ -49,6 +49,7 @@ button {
 h2 {
     font-size: medium;
     text-align: center;
+    
 }
 
 /* rules for gallery images */
@@ -166,6 +167,4 @@ h2 {
 .xButton {
     height: 20px;
     width: 10px;
-    position: ;
 }
-

@@ -1,0 +1,49 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["relationJoins"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model images {
+  id           String        @id
+  job_type     String
+  event_type   String
+  parent_grid  Int?
+  parent_id    String?
+  batch_size   Int
+  width        Int
+  height       Int
+  full_command String
+  tags         images_tags[]
+}
+
+model tags {
+  id      Int           @id @default(autoincrement())
+  tagText String
+  images  images_tags[]
+}
+
+model images_tags {
+  id       Int     @id @default(autoincrement())
+  images   images? @relation(fields: [imagesId], references: [id])
+  imagesId String?
+  tags     tags?   @relation(fields: [tagsId], references: [id])
+  tagsId   Int?
+}
+
+model users {
+  id       Int      @id @default(autoincrement())
+  email    String   @unique
+  password String
+  isAdmin  Boolean?
+}

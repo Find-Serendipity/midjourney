@@ -1,9 +1,9 @@
 import { useState } from "react";
 
-export const Search = (setImageData) => {
+export const Search = ({ setImageData }) => {
   const [searchQuery, setSearchQuery] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
-  const [bool, setBool] = useState("");
+  const [bool, setBool] = useState(false);
 
   const noDefault = (event) => {
     event.preventDefault();
@@ -11,22 +11,16 @@ export const Search = (setImageData) => {
 
   async function handleSearch(event) {
     event.preventDefault();
+    const search = bool ? searchQuery.join(" AND ") : searchQuery.join(" OR ");
     try {
-      const searchParameter = {
-        method: "GET",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ searchQuery }),
-      };
-
       const apiResponse = await fetch(
-        "https://kuze.neon-sole.ts.net/images?search=${searchQuery}",
-        searchParameter
+        `https://kuze.neon-sole.ts.net/images?search=${search}`
       );
 
-      const unpackedResponse = await apiResponse.json();
+      let jsonHolder = await apiResponse.json();
 
-      setImageData(unpackedResponse.token);
-      setSearchQuery("");
+      setImageData(jsonHolder);
+      setSearchQuery([]);
     } catch (error) {
       console.log(error);
     }
@@ -96,24 +90,16 @@ export const Search = (setImageData) => {
             </button>
           </label>
 
-          <select defaultValue={"0"} onChange={(e) => setBool(e.target.value)}>
-            <option value="0" hidden disabled>
-              Search together or individually?
-            </option>
-            <option value="and">together</option>
-            <option value="or">individually</option>
-          </select>
+          <label>
+            include all terms in results?
+            <input
+              type="checkbox"
+              value={bool}
+              onChange={(e) => setBool(e.target.value)}
+            />
+          </label>
 
-          <input
-            className="submit buttonShape"
-            type="submit"
-            placeholder="search"
-            onClick={(e) =>
-              bool === "and"
-                ? searchQuery.join(" AND ")
-                : searchQuery.join(" OR ")
-            }
-          />
+          <input className="submit buttonShape" type="submit" />
         </form>
       </div>
     </>
